@@ -2,14 +2,15 @@ import plotly.express as px
 import pandas as pd
 
 data = pd.DataFrame({
-  "category" : ["Electronics", "Electronics", "Radios", "Radios"],
-  "subcategory" : ["Phones", "Computers", "HAM", "Citizens Band"],
-  "value" : [10, 20, 5, 15]
+  "category"    : ["Electronics", "Electronics", "Electronics", "Electronics", "Electronics"],
+  "subcategory" : ["Communications", "Communications", "Communications", "Computing", "Computing"],
+  "product"     : ["Phones", "HAM Radios", "Citizens Band Radios", "Computers", "Tablets"],
+  "value"       : [10, 5, 15, 20, 12]
 })
 
 fig = px.sunburst(
   data,
-  path=['category', 'subcategory'],
+  path=['category', 'subcategory', 'product'],
   values='value',
   title="Gadgets"
 )
